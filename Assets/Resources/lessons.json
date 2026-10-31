@@ -1,0 +1,63 @@
+{
+  "lessons": [
+    {
+      "title": "Meet the Neuron",
+      "module": "AI Fundamentals",
+      "widget": "Inputs",
+      "code": ["inputs = [x1, x2]", "z = w1*x1 + w2*x2 + b", "a = activation(z)", "output = a"],
+      "steps": [
+        {"narration": "Welcome! A neural network is a team of tiny calculators called neurons. The two green balls on the left are the inputs. Tap one to flip it between zero and one.", "codeLines": [0], "highlightLayer": 0, "pulseLayer": -1},
+        {"narration": "Every connection has a weight. A weight says how much an input matters. Cyan lines push the result up, pink lines push it down, and thicker means stronger.", "codeLines": [1], "highlightLayer": -1, "pulseLayer": 0},
+        {"narration": "A neuron multiplies each input by its weight, adds the results, then adds a bias. The small orange cube is the bias. The total is called z.", "codeLines": [1], "highlightLayer": 1, "pulseLayer": -1},
+        {"narration": "Then an activation function squashes z into a useful range, here between zero and one. The glowing ring shows how active the neuron is.", "codeLines": [2], "highlightLayer": 1, "pulseLayer": -1},
+        {"narration": "The result travels on to the output neuron, the pink gem. That number is the answer of the network.", "codeLines": [3], "highlightLayer": 2, "pulseLayer": 1}
+      ]
+    },
+    {
+      "title": "Forward Pass",
+      "module": "AI Fundamentals",
+      "widget": "Inputs",
+      "code": ["h = act(W1 . x + b1)", "y = act(W2 . h + b2)", "return y"],
+      "steps": [
+        {"narration": "The inputs enter the network. Try flipping them and watch the prediction change.", "codeLines": [], "highlightLayer": 0, "pulseLayer": -1},
+        {"narration": "The hidden layer computes all three neurons at the same time. This is the first half of the forward pass.", "codeLines": [0], "highlightLayer": 1, "pulseLayer": 0},
+        {"narration": "Now the hidden results flow to the output neuron, which combines them into one prediction.", "codeLines": [1], "highlightLayer": 2, "pulseLayer": 1},
+        {"narration": "Information only moved forward, from inputs to output. That whole journey is called a forward pass.", "codeLines": [2], "highlightLayer": 2, "pulseLayer": -1}
+      ]
+    },
+    {
+      "title": "Activation",
+      "module": "AI Fundamentals",
+      "widget": "Activation",
+      "code": ["def sigmoid(z):", "    return 1/(1+exp(-z))", "def relu(z):", "    return max(0, z)"],
+      "steps": [
+        {"narration": "Without an activation function, stacking layers would just make one big straight line. Activations let a network learn curves and tricky patterns.", "codeLines": [], "highlightLayer": 1, "pulseLayer": -1, "widgetMode": 0},
+        {"narration": "Sigmoid squashes any number into the range zero to one. Drag the slider and watch the output change.", "codeLines": [0, 1], "highlightLayer": 1, "pulseLayer": -1, "widgetMode": 0},
+        {"narration": "ReLU is simpler. Negative numbers become zero and positive numbers pass through. Most modern networks use it. Drag the slider again.", "codeLines": [2, 3], "highlightLayer": 1, "pulseLayer": -1, "widgetMode": 1}
+      ]
+    },
+    {
+      "title": "Loss",
+      "module": "AI Fundamentals",
+      "widget": "Loss",
+      "code": ["error = target - prediction", "loss = error ** 2", "# smaller loss = better"],
+      "steps": [
+        {"narration": "How do we know if the network is wrong? We compare its prediction with the target answer, shown by the green flag. The gap is the error.", "codeLines": [0], "highlightLayer": 2, "pulseLayer": -1, "showTarget": true},
+        {"narration": "We square the error to get the loss, so big mistakes are punished more. Slide the prediction and watch the loss change. The target here is one.", "codeLines": [1], "highlightLayer": 2, "pulseLayer": -1, "showTarget": true},
+        {"narration": "A smaller loss means a better network. Learning means making this number shrink.", "codeLines": [2], "highlightLayer": -1, "pulseLayer": -1}
+      ]
+    },
+    {
+      "title": "Training",
+      "module": "AI Fundamentals",
+      "widget": "Training",
+      "code": ["for epoch in range(n):", "  y = forward(x)", "  loss = (t - y) ** 2", "  grads = backprop(loss)", "  w -= lr * grads"],
+      "steps": [
+        {"narration": "Training is a loop. The network predicts, measures the loss, and then adjusts its weights a little bit.", "codeLines": [0, 1, 2], "highlightLayer": -1, "pulseLayer": 0},
+        {"narration": "Backpropagation sends the error backwards through the network and works out how each weight should change. The pink arrows show that backward direction. Gradient descent then nudges each weight downhill.", "codeLines": [3, 4], "highlightLayer": -1, "pulseLayer": 1, "showGradients": true},
+        {"narration": "Let us teach it the XOR puzzle: the output should be one only when exactly one input is one. Press Train several times and watch the loss fall. If it gets stuck, press New weights.", "codeLines": [0, 4], "highlightLayer": -1, "pulseLayer": -1},
+        {"narration": "Well done! The weights changed and the network learned a pattern that nobody programmed by hand. Now let us see how much you learned.", "codeLines": [], "highlightLayer": 2, "pulseLayer": -1}
+      ]
+    }
+  ]
+}

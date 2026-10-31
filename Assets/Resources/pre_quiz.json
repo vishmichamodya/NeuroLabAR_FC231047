@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {"level": "Understand", "text": "In a neural network, what does a weight represent?", "options": ["How much an input matters", "The number of neurons", "The learning speed", "The final answer"], "correct": 0, "explanation": "A weight scales an input: bigger weight, bigger influence."},
+    {"level": "Apply", "text": "x1 = 1, x2 = 2, w1 = 0.5, w2 = 1, bias = 0. What is z = w1*x1 + w2*x2 + b?", "options": ["1.5", "2.5", "3.5", "0.5"], "correct": 1, "explanation": "0.5*1 + 1*2 + 0 = 2.5"},
+    {"level": "Remember", "text": "Which layer receives the raw data?", "options": ["Hidden layer", "Output layer", "Input layer", "Loss layer"], "correct": 2, "explanation": "The input layer holds the raw feature values."},
+    {"level": "Understand", "text": "Why do we use an activation function?", "options": ["To store weights", "To add non-linearity", "To delete inputs", "To print results"], "correct": 1, "explanation": "Without it, stacked layers collapse into one straight-line function."},
+    {"level": "Understand", "text": "What is the goal of training?", "options": ["Maximise the loss", "Add more layers", "Minimise the loss", "Remove the bias"], "correct": 2, "explanation": "Training adjusts weights so the loss becomes as small as possible."},
+    {"level": "Remember", "text": "What is a bias?", "options": ["A number added to the weighted sum", "The number of layers", "The size of the dataset", "The output of the loss"], "correct": 0, "explanation": "The bias shifts the weighted sum up or down before the activation."},
+    {"level": "Apply", "text": "For a very large positive z, sigmoid(z) is close to which value?", "options": ["0", "0.5", "1", "-1"], "correct": 2, "explanation": "Sigmoid squashes large positive numbers towards 1."},
+    {"level": "Understand", "text": "What moves through the network during a forward pass?", "options": ["Data from the inputs towards the output", "Errors from the output to the inputs", "Weights to the user", "Code to the compiler"], "correct": 0, "explanation": "A forward pass pushes the input values through the layers to the output."},
+    {"level": "Apply", "text": "What is ReLU(-3)?", "options": ["-3", "0", "3", "1"], "correct": 1, "explanation": "ReLU returns max(0, z), so a negative number becomes 0."},
+    {"level": "Apply", "text": "The target is 1. Which prediction gives the LARGER loss?", "options": ["0.1", "0.9", "They are equal", "Neither has a loss"], "correct": 0, "explanation": "Loss = (1 - 0.1)^2 = 0.81, but (1 - 0.9)^2 = 0.01."}
+  ]
+}

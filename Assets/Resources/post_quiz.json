@@ -1,0 +1,14 @@
+{
+  "questions": [
+    {"level": "Analyse", "text": "w1 = -2 and w2 = 0.5. Which input has the strongest influence, and in which direction?", "options": ["x2, pushes up", "x1, pushes down", "x2, pushes down", "Both are equal"], "correct": 1, "explanation": "|-2| is larger than |0.5| and the sign is negative, so x1 pushes the sum down."},
+    {"level": "Apply", "text": "x1 = 2, x2 = 1, w1 = 1, w2 = -1, b = 0.5. What is z?", "options": ["0.5", "1.5", "2.5", "3.5"], "correct": 1, "explanation": "2*1 + 1*(-1) + 0.5 = 1.5"},
+    {"level": "Apply", "text": "What is the output of sigmoid when z = 0?", "options": ["0", "0.5", "1", "-1"], "correct": 1, "explanation": "sigmoid(0) = 1 / (1 + e^0) = 1 / 2 = 0.5"},
+    {"level": "Apply", "text": "Target = 1 and prediction = 0.8. What is the squared-error loss?", "options": ["0.2", "0.04", "0.8", "1.8"], "correct": 1, "explanation": "(1 - 0.8)^2 = 0.04"},
+    {"level": "Analyse", "text": "After each training step the loss goes UP and keeps bouncing. What is the most likely cause?", "options": ["Learning rate too large", "Too few inputs", "Sigmoid is broken", "The target is wrong"], "correct": 0, "explanation": "Steps that are too big overshoot the minimum, so the loss bounces."},
+    {"level": "Understand", "text": "What does backpropagation do?", "options": ["Works out how each weight should change by sending the error backwards", "Draws the network on screen", "Copies the inputs to the output", "Deletes neurons that are not used"], "correct": 0, "explanation": "Backpropagation calculates the gradient of the loss for every weight."},
+    {"level": "Apply", "text": "What is ReLU(2.5)?", "options": ["0", "1", "2.5", "-2.5"], "correct": 2, "explanation": "Positive values pass through ReLU unchanged."},
+    {"level": "Analyse", "text": "The loss stays high after a lot of training. Which change is most likely to help?", "options": ["Add hidden neurons or train longer", "Set all inputs to zero", "Remove the activation function", "Delete the output neuron"], "correct": 0, "explanation": "A bigger network or more training gives it more capacity to fit the pattern."},
+    {"level": "Understand", "text": "Why does the XOR problem need a hidden layer?", "options": ["One neuron can only separate classes with a straight line", "XOR has too many inputs", "Hidden layers make training faster", "XOR cannot be learned"], "correct": 0, "explanation": "XOR is not linearly separable, so one neuron cannot solve it."},
+    {"level": "Analyse", "text": "A weight on an input is exactly 0. What effect does that input have on z?", "options": ["No effect", "It doubles z", "It makes z negative", "It makes the loss zero"], "correct": 0, "explanation": "0 * x = 0, so the input adds nothing to the sum."}
+  ]
+}
